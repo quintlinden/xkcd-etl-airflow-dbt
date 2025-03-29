@@ -22,10 +22,13 @@ cd xkcd-etl-airflow-dbt
 
 ---
 
-### 2. Generate the Initial Database
+## 2. Generate the Initial Database
 
+Run the following Python script to create the `xkcd_comics.db` database:
 
-
-```bash
+\`\`\`bash
 python fetch_xkcd_comics.py
-```
+\`\`\`
+
+When completed, make sure the `xkcd_comics.db` database is located inside the `xkcd-etl-airflow-dbt` folder.
+
