@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: comic_analytics
+    description: "XKCD comics with enriched data: cost, views, review scores."
+    columns:
+      - name: num
+        description: "Unique comic number"
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        description: "Original comic title"
+        tests:
+          - not_null
+
+      - name: review_score
+        description: "Simulated customer rating from 1.0 to 10.0"
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1.0
+              max_value: 10.0
