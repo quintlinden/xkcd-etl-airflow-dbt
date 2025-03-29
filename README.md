@@ -9,7 +9,7 @@ This project fetches comic metadata from the XKCD API, stores it in a SQLite dat
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Project
 
@@ -18,3 +18,14 @@ Open an **empty folder**, then run:
 ```bash
 git clone https://github.com/quintlinden/xkcd-etl-airflow-dbt.git
 cd xkcd-etl-airflow-dbt
+```
+
+---
+
+### 2. Generate the Initial Database
+
+
+
+```bash
+python fetch_xkcd_comics.py
+```
