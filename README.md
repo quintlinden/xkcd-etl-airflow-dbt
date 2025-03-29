@@ -1,7 +1,4 @@
-# xkcd-etl-airflow-dbt
-ETL pipeline for XKCD comics using Python, Airflow, DBT, and SQLite.
-
-# 📊 XKCD ETL Pipeline with Airflow & DBT
+# XKCD ETL Pipeline with Airflow & DBT
 
 **Beginner guide to creating a data pipeline for XKCD comics using Apache Airflow, DBT, and Docker.**
 
