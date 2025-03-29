@@ -87,6 +87,63 @@ Place these files in:
 - `comic_analytics.sql`  
 - `schema.yml`
 
+---
+
+### 8. Access the Docker Container
+
+Open a new terminal, go to your project folder, and run:
+
+```bash
+docker exec -it airflow bash
+```
+
+---
+
+### 9. Create the DBT Profile
+
+This defines how DBT connects to your database:
+
+```bash
+mkdir -p /home/airflow/.dbt
+
+cat > /home/airflow/.dbt/profiles.yml <<EOF
+xkcd_transformations:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: /opt/airflow/xkcd_comics.db
+      schema: main
+      schemas_and_paths:
+        main: /opt/airflow/xkcd_comics.db
+      schema_directory: /opt/airflow
+EOF
+```
+
+---
+
+### 10. Navigate to the DBT Project Folder
+
+```bash
+cd /opt/airflow/dbt/xkcd_transformations
+```
+
+### 11. Install the Required DBT Package
+
+```bash
+dbt deps
+```
+
+### 12. Run Transformations and Tests Manually
+
+```bash
+dbt run
+dbt test
+```
+
+
+
 
 
 
